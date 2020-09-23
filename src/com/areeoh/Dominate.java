@@ -1,7 +1,8 @@
 package com.areeoh;
 
-import com.areeoh.ClansAUCore;
+import com.areeoh.dominate.DominateScoreboard;
 import com.areeoh.framework.Manager;
+import com.areeoh.scoreboard.ScoreboardManager;
 import com.areeoh.utility.UtilMessage;
 import com.areeoh.dominate.DominateManager;
 import com.areeoh.dominate.commands.DominateCommandManager;
@@ -18,6 +19,11 @@ public class Dominate extends JavaPlugin {
 
     public void onEnable() {
         this.clansAUCore = (ClansAUCore) Bukkit.getPluginManager().getPlugin("ClansAU-Core");
+
+        final DominateScoreboard dominateScoreboard = new DominateScoreboard(clansAUCore.getManager(ScoreboardManager.class));
+        dominateScoreboard.initialize(this);
+        clansAUCore.getManager(ScoreboardManager.class).addModule(dominateScoreboard);
+
         registerManagers();
 
         for (Manager manager : managers) {

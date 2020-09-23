@@ -3,12 +3,12 @@ package com.areeoh.dominate.maps;
 import com.areeoh.dominate.DominateManager;
 import com.areeoh.dominate.DominateWorld;
 import com.areeoh.dominate.capturepoint.CapturePoint;
-import org.bukkit.Bukkit;
 import org.bukkit.Location;
 
 public class Pyramid extends DominateWorld {
-    public Pyramid() {
-        super(DominateManager.DominateMap.PYRAMID, "Pyramid");
+
+    public Pyramid(DominateManager dominateManager) {
+        super(dominateManager, DominateManager.DominateMap.PYRAMID, "Pyramid");
 
         addCapturePoint(new CapturePoint("Pyramid", new Location(getWorld(), -60, 6, -65)));
         addCapturePoint(new CapturePoint("Lake", new Location(getWorld(), -121, 4, -65)));

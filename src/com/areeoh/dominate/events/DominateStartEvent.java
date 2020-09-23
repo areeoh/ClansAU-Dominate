@@ -1,21 +1,21 @@
 package com.areeoh.dominate.events;
 
+import com.areeoh.dominate.DominateGame;
 import com.areeoh.dominate.capturepoint.CapturePoint;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
-public class DominateCaptureEvent extends Event {
+public class DominateStartEvent extends Event {
 
     private static final HandlerList handlers = new HandlerList();
+    private final DominateGame dominateGame;
 
-    private final CapturePoint capturePoint;
-
-    public DominateCaptureEvent(CapturePoint capturePoint) {
-        this.capturePoint = capturePoint;
+    public DominateStartEvent(DominateGame dominateGame) {
+        this.dominateGame = dominateGame;
     }
 
-    public CapturePoint getCapturePoint() {
-        return capturePoint;
+    public DominateGame getDominateGame() {
+        return dominateGame;
     }
 
     public static HandlerList getHandlerList() {

@@ -1,10 +1,9 @@
 package com.areeoh.dominate;
 
 import com.areeoh.ClansAUCore;
+import com.areeoh.dominate.listeners.*;
 import com.areeoh.framework.Manager;
 import com.areeoh.framework.Module;
-import com.areeoh.dominate.listeners.CapturePointListener;
-import com.areeoh.dominate.listeners.SidebarHandler;
 import com.areeoh.dominate.maps.*;
 
 public class DominateManager extends Manager<Module> {
@@ -18,7 +17,13 @@ public class DominateManager extends Manager<Module> {
     @Override
     public void registerModules() {
         addModule(new CapturePointListener(this));
-        addModule(new SidebarHandler(this));
+        addModule(new HungerHandler(this));
+        addModule(new ClassSelectHandler(this));
+        addModule(new WeatherHandler(this));
+        addModule(new MobSpawnHandler(this));
+        addModule(new ArmorStandHandler(this));
+        addModule(new UnequipArmorHandler(this));
+        addModule(new DominateHandler(this));
     }
 
     public DominateGame getDominateGame() {

@@ -4,7 +4,7 @@ import com.areeoh.dominate.DominateManager;
 import com.areeoh.dominate.DominateWorld;
 
 public class Gulley extends DominateWorld {
-    public Gulley() {
-        super(DominateManager.DominateMap.GULLEY, "Gulley");
+    public Gulley(DominateManager dominateManager) {
+        super(dominateManager, DominateManager.DominateMap.GULLEY, "Gulley");
     }
 }

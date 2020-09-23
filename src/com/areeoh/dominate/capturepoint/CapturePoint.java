@@ -18,13 +18,13 @@ public class CapturePoint {
     private final String name;
     private Team team = null;
     private final Location location;
-    private final double radius = 3.5;
+    private final double radius = 3;
     private final Cuboid cuboid;
 
     public CapturePoint(String name, Location location) {
         this.name = name;
         this.location = location;
-        this.cuboid = new Cuboid(location.clone().add(radius, radius, radius), location.clone().add(-radius, -radius, -radius));
+        this.cuboid = new Cuboid(getRealLocation().clone().add(radius, radius, radius), getRealLocation().clone().add(-radius, -radius, -radius));
         for (Block block : this.cuboid.getBlocks()) {
             if(block.getType() == Material.WOOL) {
                 block.setData(DyeColor.WHITE.getWoolData());
