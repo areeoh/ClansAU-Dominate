@@ -1,8 +1,9 @@
 name: ClansAU-Dominate
-main: com.areeoh.Dominate
+main: com.areeoh.dominate.Dominate
 version: 0.1
 author: ClansAU Team
 depend: [ClansAU-Core,ClansAU-Champions]
 commands:
-  dominate:
-    aliases: [dom]
+  game:
+  quit:
+    aliases: [leave,lobby]
